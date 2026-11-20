@@ -1,0 +1,6 @@
+@extends('layouts.app')
+@section('title', 'Order receipt')
+@section('content')
+<div class="receipt-actions"><a href="{{ route('pos') }}" class="text-link">← New order</a><button type="button" id="print-receipt" class="button dark">Print receipt</button></div>
+<article class="receipt"><div class="receipt-brand">ember<span>CAFÉ & COMMUNITY</span></div><p>Thanks for stopping by.</p><h1>Order #{{ str_pad($order->id, 4, '0', STR_PAD_LEFT) }}</h1><p>{{ $order->created_at->timezone('Asia/Manila')->format('d M Y · h:i A') }}<br>{{ $order->service }} · Cash payment</p><table><thead><tr><th>ITEM</th><th>QTY</th><th>AMOUNT</th></tr></thead><tbody>@foreach($order->items as $item)<tr><td>{{ $item['name'] }}</td><td>{{ $item['quantity'] }}</td><td>₱{{ number_format($item['price'] * $item['quantity'] / 100, 2) }}</td></tr>@endforeach</tbody></table><div class="receipt-totals"><p><b>Total paid</b><b>₱{{ number_format($order->total / 100, 2) }}</b></p><p><span>Cash received</span><span>₱{{ number_format($order->cash / 100, 2) }}</span></p><p><span>Change</span><span>₱{{ number_format(($order->cash - $order->total) / 100, 2) }}</span></p></div><p class="receipt-end">A little warmth. In every cup.<br><small>Classroom demonstration receipt</small></p></article>
+@endsection

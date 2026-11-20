@@ -1,0 +1,8 @@
+@extends('layouts.app')
+@section('title', 'About Ember')
+@section('content')
+<div class="page-heading"><div><p class="eyebrow">OUR LITTLE CORNER</p><h1>Good coffee. Even better company.</h1><p>Meet the idea behind Ember Café.</p></div></div>
+<section class="about-hero"><div><span class="pill">THE EMBER WAY</span><h2>A warm space.<br>A familiar ritual.<br><em>A reason to stay.</em></h2><p>Ember is a café concept built around the simple joy of a well-made cup. Think comforting classics, fresh pastries, and a team who remembers your name.</p><p>This workspace brings that same care to the counter: a clear menu, organized customer records, and one place for the people who make it happen.</p><a href="{{ route('pos') }}" class="button dark">Explore the menu ↗</a></div><div class="about-poster"><span>EST. 2026</span><strong>stay<br>for a<br><em>little.</em></strong><span>EMBER CAFÉ · COFFEE & COMMUNITY</span></div></section>
+<div class="section-heading"><h2>Care in the small things.</h2></div>
+<section class="values-grid"><article><span>01 / THE CUP</span><h3>A thoughtful menu</h3><p>Espresso classics, creamy matcha, and something freshly baked. A little something for every kind of coffee break.</p></article><article><span>02 / THE PEOPLE</span><h3>A familiar welcome</h3><p>Customer accounts keep contact details close, while staff accounts put a name to every role behind the counter.</p></article><article><span>03 / THE COUNTER</span><h3>A smoother service</h3><p>A simple point of sale helps the crew take an order, calculate change, and send each guest off with a receipt.</p></article></section>
+@endsection
